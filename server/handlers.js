@@ -3,6 +3,9 @@ const getRandomQuizzes = require("./Handlers/getRandomQuizzes");
 const getQuiz = require("./Handlers/getQuiz");
 const createNewQuiz = require ("./Handlers/createNewQuiz");
 const deleteQuiz = require("./Handlers/deleteQuiz");
+const updateQuiz = require("./Handlers/updateQuiz");
+const getNewQuestion = require("./Handlers/getNewQuestion");
+const getAdmin = require("./Handlers/adminRoute")
 
 
 
@@ -11,5 +14,8 @@ module.exports = {
     getRandomQuizzes,
     getQuiz,
     createNewQuiz,
-    deleteQuiz
+    deleteQuiz,
+    updateQuiz,
+    getNewQuestion,
+    getAdmin
 }

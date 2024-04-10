@@ -5,10 +5,12 @@ const getNewQuestion = async (req, res) => {
     try {
         // Information through req.query
         // variables for question type, difficulty and category
+        const category = req.query
+        const difficulty = req.query
 
 
 
-        const apiResponse = await fetch ('https://opentdb.com/api.php?amount=1'); // Fetches one question (data) from the API
+        const apiResponse = await fetch ('https://opentdb.com/api.php?amount=1&category=23&difficulty=easy'); // Fetches one question (data) from the API
         const apiData = await apiResponse.json();
         console.log(apiData);
         
@@ -20,6 +22,6 @@ const getNewQuestion = async (req, res) => {
     }
 }
 
-getNewQuestion()
+// getNewQuestion()
 
 module.exports = getNewQuestion

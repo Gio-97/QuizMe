@@ -3,17 +3,23 @@ const {
     getRandomQuizzes,
     getQuiz,
     createNewQuiz,
-    deleteQuiz
+    deleteQuiz,
+    updateQuiz,
+    getNewQuestion,
+    getAdmin
   } = require("./handlers");
   
   const router = require("express").Router();
+
+  router.post("/admin",getAdmin) //admin route 
   
   router.get("/allQuizzes", getAllQuizzes);
   router.get("/randomQuizzes", getRandomQuizzes);
   router.get("/quiz/:topic", getQuiz);
   
+  router.get("/newQuestion", getNewQuestion) 
   router.post("/newQuiz", createNewQuiz);
-  router.patch("/updateCart", updateCart);
+  router.patch("/editQuiz", updateQuiz);
   
   router.delete("/deleteQuiz/:id", deleteQuiz)
   
