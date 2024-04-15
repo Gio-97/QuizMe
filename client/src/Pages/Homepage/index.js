@@ -3,16 +3,20 @@ import styled from "styled-components";
 import React from 'react';
 
 // Component and Other Import
-import RecommendedSection from './RecommendedSection.js';
+import RandomQuizzes from "./RandomQuizzes";
+import Header from "./Header";
 
 
 const Home = () => {
   return (
-    <HomeContainer>
-      <Header/>
-      <RecommendedSection />
-    </HomeContainer>
+    
+    <>
+    <Header/>
+    <RandomQuizzes/>
+    </>
+      
   );
 }
 
 export default Home;
+

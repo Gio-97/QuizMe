@@ -9,7 +9,7 @@ const options= {
 };
 
 
-const getAllQuizzes = async(req, res) => { // Gets all the quizzes for the admin to see 
+const getAllQuizzes = async(req, res) => { // Gets all the quizzes for the admin to see *Endpoint works*
     const client = new MongoClient(MONGO_URI);
 
     try {
@@ -19,7 +19,7 @@ const getAllQuizzes = async(req, res) => { // Gets all the quizzes for the admin
         console.log("connected");
 
         const quizzes = await db.collection("Quizzes").find().toArray();
-        res.status(200).json({status: 200, message:'Here are the quizzes you asked for', quizzes});
+        res.status(200).json({status: 200, message:'Here are the quizzes you asked for', data:quizzes});
 
     }
     catch (err) {

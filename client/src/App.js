@@ -1,3 +1,4 @@
+import { useState } from "react";
 import {
   BrowserRouter as Router,
   Routes as Switch,
@@ -5,16 +6,29 @@ import {
 } from "react-router-dom";
 
 import Admin from "./Admin";
+import RandomQuizzes from "./Pages/Homepage/RandomQuizzes";
+import Home from "./Pages/Homepage";
+import AllQuizzes from "./Pages/Quiz/AllQuizzes";
+import NewQuiz from "./Pages/Quiz/NewQuiz";
 
 const App = () => {
   const [isAdmin, setIsAdmin] = useState(false);
 
   return (
-    <>
-      <Admin adminStateProp={isAdmin} />
+    <Router>
 
-      <Admin adminStateProp={setIsAdmin} />
-    </>
+      <Switch>
+        <Route path="/admin" element={<Admin isAdmin={isAdmin} setIsAdmin={setIsAdmin}/>}/>
+        <Route path="/" element={<Home/>}/>
+        <Route path="/allQuizzes" element= {<AllQuizzes/>}/>
+        <Route path="/newQuiz" element={<NewQuiz/>}/>
+      </Switch>
+    </Router>
+      
+      
+
+
+    
   );
 };
 

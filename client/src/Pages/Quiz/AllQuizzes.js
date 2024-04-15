@@ -1,33 +1,24 @@
 import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
-import "./Home.css"; // Import CSS file for styling
 
-const RandomQuizzes = () => {
-  const [randomQuizzes, setRandomQuizzes] = useState();
+const AllQuizzes = () => {
+  const [allQuizzes, setAllQuizzes] = useState([]);
   const navigate = useNavigate();
 
   useEffect(() => {
-    fetch("/randomQuizzes")
+    fetch("/allQuizzes")
       .then((response) => response.json())
-      .then((data) => setRandomQuizzes(data.data))
+      .then((data) => setAllQuizzes(data.data))
       .catch((error) => console.error("Error fetching quizzes:", error));
   }, []);
+  console.log(allQuizzes); // Returns an object intead of an array
 
-  const handleButtonClick = () => {
-    navigate("/admin");
+  const handleNewQuizButton = () => {
+    navigate("/newQuiz");
   };
 
   return (
     <>
-      {/* <ul>
-        {Quizzes.map((quiz) => (
-          <li key={quiz._id}>{quiz.question}</li>
-        ))}
-      </ul> */}
-
-      <h2 className="test_knowledge">Test your knowledge</h2>
-      <h3>This is home</h3>
-
       {allQuizzes.map((quiz) => (
         <li key={quiz._id}>
           <strong>Category:</strong> {quiz.category}
@@ -50,11 +41,9 @@ const RandomQuizzes = () => {
         </li>
       ))}
 
-      <button onClick={handleButtonClick} className="loginBtn">
-        Admin Login
-      </button>
+      <button onClick={handleNewQuizButton}>Create a new quiz</button>
     </>
   );
 };
 
-export default RandomQuizzes;
+export default AllQuizzes;

@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "main": "index.js",
   "license": "MIT",
-  "proxy": "http://localhost:3000/",
+  "proxy": "http://localhost:8000/",
   "dependencies": {
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
