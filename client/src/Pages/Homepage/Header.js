@@ -1,12 +1,20 @@
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
 
 import './Home.css'; // Import CSS file for styling
 
 const Header = () => {
+  const navigate = useNavigate();
+  const handleNavHome = () => {
+    navigate("/");
+  }
+
   return (
-    <div className='container'>
+    <div onClick= {handleNavHome} className='container'>
       <h1 className='title'>QuizMe</h1>
     </div>
+
+
   );
 }
 

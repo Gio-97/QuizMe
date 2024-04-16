@@ -2,6 +2,8 @@ import React, { useEffect, useState } from 'react';
 import { useNavigate } from "react-router-dom";
 import GetQuestion from './GetQuestion';
 import SaveQuiz from './SaveQuiz';
+import Header from "../Homepage/Header";
+
 
 const categories = ["Sports", "Geography", "Entertainment"] // Cate
 const difficulties = ["easy", "medium", "hard"]
@@ -16,7 +18,6 @@ const NewQuiz = () => {
     const [question4, setQuestion4] = useState(null)
     const [question5, setQuestion5] = useState(null)
 
-   
 
 
     //Options for category and difficulty
@@ -32,6 +33,7 @@ const NewQuiz = () => {
 
     return (
         <>
+        <Header/>
         <label> Select a category:
             <select onChange={(e) => setSelectedCat(e.target.value)}>
                 {catOptions}

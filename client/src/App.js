@@ -10,6 +10,8 @@ import RandomQuizzes from "./Pages/Homepage/RandomQuizzes";
 import Home from "./Pages/Homepage";
 import AllQuizzes from "./Pages/Quiz/AllQuizzes";
 import NewQuiz from "./Pages/Quiz/NewQuiz";
+import Quizzes from "./Pages/Quiz/Quizzes";
+import Quiz from "./Pages/Quiz/Quiz";
 
 const App = () => {
   const [isAdmin, setIsAdmin] = useState(false);
@@ -22,6 +24,8 @@ const App = () => {
         <Route path="/" element={<Home/>}/>
         <Route path="/allQuizzes" element= {<AllQuizzes/>}/>
         <Route path="/newQuiz" element={<NewQuiz/>}/>
+        <Route path="/quizzes/:category" element={<Quizzes/>}/>
+        <Route path="/quiz/:_id" element={<Quiz/>}/>
       </Switch>
     </Router>
       

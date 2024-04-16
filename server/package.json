@@ -4,14 +4,15 @@
   "main": "index.js",
   "license": "MIT",
   "dependencies": {
+    "axios": "^1.6.8",
     "dotenv": "^16.4.5",
     "express": "^4.19.2",
     "mongodb": "^6.5.0",
     "morgan": "^1.10.0",
     "node-fetch": "^3.3.2",
     "nodemon": "^3.1.0",
-    "uuid": "^9.0.1",
-    "type": "module"
+    "type": "module",
+    "uuid": "^9.0.1"
   },
   "scripts": {
     "start": "nodemon index.js"

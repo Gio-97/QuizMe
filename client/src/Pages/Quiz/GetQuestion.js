@@ -1,5 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import SampleQuestion from './SampleQuestion';
+import Header from "../Homepage/Header";
+
 
 
 const GetQuestion = ({question, setQuestion, category, difficulty}) => {
@@ -24,6 +26,7 @@ const GetQuestion = ({question, setQuestion, category, difficulty}) => {
 
     return (
         <>
+        <Header/>
         <h2>Get a new question</h2>
         <SampleQuestion question={question}/>
         <button onClick={handleQuestionFetch} disabled = {buttonDisabled}>{buttonDisabled? "Working...": "Get question"}</button>

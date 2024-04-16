@@ -39,7 +39,7 @@ const Admin = ({ isAdmin, setIsAdmin }) => {
 
   return (
     <div>
-      <Header/>
+    <Header />
       <h1 className="adminText">Admin Login</h1>
       <form onSubmit={handleSubmit} className="adminForm">
         <label>
